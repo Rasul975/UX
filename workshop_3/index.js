@@ -12,10 +12,7 @@ function escapeHTML(html){
 for (i = 0; i < 4; i++) {
     var x = "txt" + i;
     var h = document.getElementById(x).innerHTML;
-    console.log(h);
     h = escapeHTML(h);
-    console.log(h);
     var t = document.getElementById(x).textContent;
-    console.log(t);
     document.write("<p>innerHTML = " + h + " textContent= " + t + "</p>");
 }
