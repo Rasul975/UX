@@ -1,18 +1,18 @@
-function onclickHandler(event){
-    alert('Button ' + this.id + ' has just been clicked');
-}
-document.getElementById('myButton').addEventListener('click', onclickHandler, false);
+// function onclickHandler(event){
+//     alert('Button ' + this.id + ' has just been clicked');
+// }
+// document.getElementById('myButton').addEventListener('click', onclickHandler, false);
 
 function validate_form(thisform){
     with (thisform) {
-        if (name.value == ""){
-            name.focus();
+        if (fname.value == "" | lname.value == ""){
+            fname.focus();
             alert("Please enter your name");
             return false;
         }
 
-        if (name.value.length < 5){
-            name,focus();
+        if (fname.value.length < 5){
+            fname,focus();
             alert("Enter a name longer than 5 characters");
             return false;
         }
@@ -29,3 +29,13 @@ function validate(x){
         return false
     }
 }
+
+var fname = document.getElementById('fname');
+var lname = document.getElementById('lname');
+var email= document.getElementById('mail');
+
+function oninputHandler(event) {
+    email.value = fname.value + "." + lname.value + "@edu.salford.ac.uk";
+}
+fname.addEventListener("input", oninputHandler, false);
+lname.addEventListener("input", oninputHandler, false);
